@@ -1,0 +1,31 @@
+{
+	"description": "custom-pipeline",
+	"processors": [
+		{
+			"grok": {
+				"field": "message",
+				"patterns": [
+					"时间：%{DATA:timestamp}\\\t"
+				]
+			},
+			"remove": {
+				"field": [
+					"@timestamp"
+				]
+			}
+		},
+		{
+			"date": {
+				"field": "timestamp",
+				"target_field": "@timestamp",
+				"formats": [
+					"YYYY-MM-dd HH:mm:ss SSSSSSS"
+				],
+				"timezone": "Asia/Shanghai"
+			},
+			"remove": {
+				"field": "timestamp"
+			}
+		}
+	]
+}

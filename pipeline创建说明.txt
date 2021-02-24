@@ -1,0 +1,1 @@
+Postman以Post方式调用http://127.0.0.1:9200/_ingest/pipeline/custom-pipeline(pipeline名)， 以json格式发送pipeline内容，，用Get方式调用http://127.0.0.1:9200/_ingest/pipeline/custom-pipeline(pipeline名) 查看pipeline是否存在
